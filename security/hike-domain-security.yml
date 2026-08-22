@@ -1,0 +1,86 @@
+generated: '2026-08-22'
+method: probed
+source: live TLS + DNS probe of hike.in (openssl s_client, curl, dig @8.8.8.8)
+note: >-
+  Hike Private Limited wound down completely in September 2025 after India's Promotion
+  and Regulation of Online Gaming Act, 2025. The DNS zone for hike.in is still published
+  (Route 53), but the origin behind it is gone: every HTTPS request returns a Google
+  Front End 502 and the wildcard certificate expired on 2026-07-01. Every developer-facing
+  subdomain that ever appeared in Certificate Transparency (platform.hike.in, hub.hike.in,
+  im.hike.in, faq.hike.in, support.hike.in, press.hike.in, shop.hike.in, discourse.hike.in)
+  is now NXDOMAIN. This record captures the residual posture of a decommissioned estate,
+  not a running service.
+hosts:
+- host: hike.in
+  https: true
+  tls_version: TLSv1.3
+  cert_subject: CN=*.hike.in
+  cert_issuer: 'C=US, ST=Arizona, L=Scottsdale, O=GoDaddy.com, Inc., CN=Go Daddy Secure Certificate Authority - G2'
+  cert_not_before: '2025-06-18T05:34:31Z'
+  cert_expires: '2026-07-01T07:18:19Z'
+  cert_expired: true
+  tls_verify: 'failed: certificate has expired (openssl verify code 10)'
+  http_status: 502
+  http_note: origin returns a Google Front End "502 Server Error" page for every path
+  hsts: false
+- host: www.hike.in
+  dns: CNAME hike.in
+  https: true
+  cert_expired: true
+  http_status: 502
+  hsts: false
+- host: ai.hike.in
+  dns: A 34.54.124.161
+  https: true
+  cert_expired: true
+  http_status: 502
+  hsts: false
+- host: blog.hike.in
+  dns: A 52.0.16.118
+  https: false
+  http_status: null
+  http_note: connection timed out after 15s
+- host: docs.hike.in
+  dns: A 10.20.0.23
+  https: false
+  http_note: >-
+    public DNS answers with an RFC 1918 private address; the record survives in the zone
+    but points at an internal host that is not routable from the internet
+- host: dev.hike.in
+  dns: A 10.25.0.38
+  https: false
+  http_note: >-
+    public DNS answers with an RFC 1918 private address; not routable from the internet
+nxdomain_hosts:
+- platform.hike.in
+- hub.hike.in
+- im.hike.in
+- faq.hike.in
+- support.hike.in
+- press.hike.in
+- shop.hike.in
+- discourse.hike.in
+- api.hike.in
+- developer.hike.in
+domains:
+- domain: hike.in
+  dnssec: false
+  dnskey: []
+  ds: []
+  caa:
+  - 0 issuewild "godaddy.com"
+  spf: true
+  spf_record: v=spf1 include:_spf.google.com include:amazonses.com ~all
+  dmarc: true
+  dmarc_policy: quarantine
+  dmarc_subdomain_policy: reject
+  dmarc_pct: 1
+  dmarc_rua: mailto:mailauth-reports@hike.in
+  mx: google-workspace
+x-evidence:
+- {probe: 'openssl s_client -connect hike.in:443', result: 'verify error:num=10:certificate has expired'}
+- {probe: 'curl -k https://hike.in/', result: 'HTTP 502'}
+- {probe: 'dig DNSKEY hike.in', result: empty}
+- {probe: 'dig CAA hike.in', result: '0 issuewild "godaddy.com"'}
+- {probe: 'dig TXT _dmarc.hike.in', result: 'v=DMARC1; p=quarantine; sp=reject'}
+- {probe: 'crt.sh %.hike.in', result: '33 historical names; every developer subdomain now NXDOMAIN'}

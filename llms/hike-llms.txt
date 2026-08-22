@@ -1,0 +1,49 @@
+# Hike
+
+> Hike Private Limited (New Delhi, India) is a **wound-down** consumer internet company.
+> Founded in 2011 by Kavin Bharti Mittal, it built Hike Messenger — at its peak one of
+> India's largest messaging apps — retired the messenger in January 2021, and pivoted to
+> the Rush Gaming Universe, a mobile skill-gaming platform with Web3 elements. Following
+> India's Promotion and Regulation of Online Gaming Act, 2025, the company announced in
+> September 2025 that it would wind down completely. **There is no live Hike API,
+> developer portal, or machine-readable contract.** This file exists so an agent does not
+> spend a retry budget hunting one.
+
+## Status
+
+- Operating status: wound down (announced September 2025)
+- Primary domain: hike.in — DNS still published, origin returns HTTP 502; wildcard TLS
+  certificate expired 2026-07-01
+- Former developer/product hosts (platform.hike.in, hub.hike.in, im.hike.in, api.hike.in,
+  developer.hike.in, faq.hike.in, support.hike.in): NXDOMAIN
+- rush.gg now redirects to sonixtournament.com (unrelated owner);
+  hike.xyz and rushgaming.com are parked on Afternic
+- No OpenAPI, AsyncAPI, GraphQL SDL, MCP server, A2A agent card, .well-known document,
+  Postman collection, or first-party SDK was found on any host
+
+## What still exists
+
+- [GitHub organization](https://github.com/hike): "Hike Private Limited", New Delhi,
+  3 public repositories — two forks of `pyexiftool` and one Checkout.com Flow test
+  harness (`checkout_payout_flow`). None of these is a Hike API or client library.
+- [Forge Global secondary-market listing](https://forgeglobal.com/hike_stock/) — the
+  private-stock venue page this profile was harvested from (bot-challenged, HTTP 403 to
+  automated clients).
+- [Wikipedia: Hike Messenger](https://en.wikipedia.org/wiki/Hike_Messenger) — historical
+  record of the messaging product.
+
+## API Evangelist artifacts in this repository
+
+- [Domain security probe](security/hike-domain-security.yml) — TLS, DNSSEC, CAA, SPF and
+  DMARC posture of the residual hike.in estate
+- [Well-known probe](well-known/hike-well-known.yml) — recorded absence of every
+  `/.well-known/` discovery document
+- [apis.yml](apis.yml) — the APIs.json profile, including the `x-coverage` block that
+  states why this profile is thin
+
+## Do not confuse with
+
+- **HikeUp** (`hikeup.com`, `docs.hikeup.com`) — an unrelated retail/commerce platform
+  that publishes a REST API. Not this company.
+- **Code Hike** (`codehike.org`) — an unrelated developer tooling project.
+- **Hike Medical**, **hike.com** — unrelated brands sharing the name.

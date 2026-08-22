@@ -1,0 +1,29 @@
+generated: '2026-08-22'
+method: probed
+source: live probe of https://hike.in/.well-known/* on 2026-08-22
+hit_count: 0
+note: >-
+  No .well-known surface is served. hike.in still resolves but the origin behind it is
+  decommissioned: every path — including the control probe below — returns the same Google
+  Front End 502 error page, and the wildcard TLS certificate expired 2026-07-01 (probes
+  were run with certificate verification disabled purely to read the status code). No
+  document was fetched and none was saved, so NO WellKnown or SecurityTxt pointer is
+  emitted for this provider. This is a recorded absence, not a surface.
+hosts:
+- host: https://hike.in
+  documents:
+  - {path: /.well-known/security.txt, status: 502, file: null}
+  - {path: /.well-known/openid-configuration, status: 502, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 502, file: null}
+  - {path: /.well-known/api-catalog, status: 502, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 502, file: null}
+  - {path: /.well-known/agent-card.json, status: 502, file: null}
+  - {path: /.well-known/agent.json, status: 502, file: null}
+soft_404_control:
+  path: /openapi.json
+  status: 502
+  bytes: 332
+  body: '502 Server Error — Google Front End'
+  interpretation: >-
+    the origin answers identically for a path that cannot exist, confirming there is no
+    live application behind the domain
