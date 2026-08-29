@@ -13,6 +13,17 @@ description: >-
   of Rush. As of August 2026 hike.in still resolves but serves an HTTP 502 behind an
   expired certificate, and every developer-facing subdomain is NXDOMAIN; the company
   publishes no API, developer portal, or machine-readable contract.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://avatars.githubusercontent.com/u/1162265?v=4
 url: https://raw.githubusercontent.com/api-evangelist/hike/refs/heads/main/apis.yml
 x-type: company
