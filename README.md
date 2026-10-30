@@ -64,5 +64,46 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hike is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/hike_stock/
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
+**Status:** wound-down
+
+Hike Private Limited is a New Delhi consumer internet company founded in 2011 by Kavin Bharti Mittal. It is best known for Hike Messenger, launched in December 2012 and at its peak one of India's largest homegrown messaging apps, which the company retired in January 2021 to pivot into the Rush Gaming Universe — a mobile-first skill-gaming platform that layered Web3 ownership and play-to-earn mechanics over roughly fourteen casual titles. Hike raised approximately $261M across seven rounds from investors including SoftBank, Tencent, Tiger Global and Polygon, and reached unicorn valuation in 2021. In September 2025, after India's Promotion and Regulation of Online Gaming Act banned real-money gaming, the founder announced a complete wind-down of the company and of Rush. As of August 2026 hike.in still resolves but serves an HTTP 502 behind an expired certificate, and every developer-facing subdomain is NXDOMAIN; the company publishes no API, developer portal, or machine-readable contract.
+
+**Areas:** Company · Messaging · Social · Gaming · Mobile · Consumer · Web3 · India · Defunct
+
+## Hike on APIs.io (historical record)
+
+Everything profiled for Hike is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hike/](https://apis.io/providers/hike/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Hike Domain Security](https://apis.io/security/hike/hike-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [GitHub](https://github.com/hike)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hike: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hike/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
